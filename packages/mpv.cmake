@@ -16,6 +16,7 @@ ExternalProject_Add(mpv
         uchardet
         openal-soft
         mujs
+        python3-embed
         vulkan
         shaderc
         libplacebo
@@ -39,6 +40,8 @@ ExternalProject_Add(mpv
         -Dpdf-build=enabled
         -Dlua=enabled
         -Djavascript=enabled
+        -Dpython=enabled
+        -Dpydebug=true
         -Dsdl2=enabled
         -Dlibarchive=enabled
         -Dlibbluray=enabled
