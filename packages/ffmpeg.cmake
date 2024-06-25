@@ -46,7 +46,7 @@ ExternalProject_Add(ffmpeg
         rubberband
         libva
         openal-soft
-    GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
+    GIT_REPOSITORY https://github.com/librempeg/librempeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
     GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !tests/ref/fate"
@@ -61,7 +61,6 @@ ExternalProject_Add(ffmpeg
         --enable-runtime-cpudetect
         --enable-gpl
         --enable-version3
-        --enable-postproc
         --enable-avisynth
         --enable-vapoursynth
         --enable-libass
