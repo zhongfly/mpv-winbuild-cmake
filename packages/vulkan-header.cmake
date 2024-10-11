@@ -5,6 +5,7 @@ ExternalProject_Add(vulkan-header
     UPDATE_COMMAND ""
     GIT_REMOTE_NAME origin
     GIT_TAG main
+    GIT_RESET 14345dab231912ee9601136e96ca67a6e1f632e7
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -G Ninja
         -DCMAKE_BUILD_TYPE=Release
