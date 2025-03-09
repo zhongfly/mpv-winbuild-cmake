@@ -1,0 +1,11 @@
+prefix=@MINGW_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/python3
+
+Name: Python
+Description: Embed Python into an application
+Version: @verson@
+Libs.private:
+Libs: -L${libdir} -lpython3@minver@
+Cflags: -I${includedir}
