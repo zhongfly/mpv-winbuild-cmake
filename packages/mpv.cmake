@@ -16,16 +16,20 @@ ExternalProject_Add(mpv
         uchardet
         openal-soft
         mujs
+        python3-embed
         vulkan
         shaderc
         libplacebo
         spirv-cross
         vapoursynth
         libsdl2
-    GIT_REPOSITORY https://github.com/mpv-player/mpv.git
+    GIT_REPOSITORY https://github.com/varbhat/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}
-    GIT_CLONE_FLAGS "--filter=tree:0"
+    GIT_REMOTE_NAME origin
+    GIT_TAG python-embed    
+    GIT_CLONE_FLAGS ""
     UPDATE_COMMAND ""
+    PATCH_COMMAND ${EXEC} sed -i "s/pthread_t/mp_thread/g" <SOURCE_DIR>/player/scripting.c || true
     CONFIGURE_COMMAND ${EXEC} CONF=1 meson setup <BINARY_DIR> <SOURCE_DIR>
         --prefix=${MINGW_INSTALL_PREFIX}
         --libdir=${MINGW_INSTALL_PREFIX}/lib
@@ -41,6 +45,8 @@ ExternalProject_Add(mpv
         -Dpdf-build=enabled
         -Dlua=enabled
         -Djavascript=enabled
+        -Dpython=enabled
+        -Dpydebug=true
         -Dsdl2=enabled
         -Dlibarchive=enabled
         -Dlibbluray=enabled

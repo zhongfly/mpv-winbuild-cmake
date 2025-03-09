@@ -67,6 +67,7 @@ list(APPEND ep
     davs2
     angle-headers
     mujs
+    python3-embed
     spirv-headers
     spirv-tools
     spirv-cross
