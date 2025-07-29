@@ -6,7 +6,6 @@ ExternalProject_Add(ffmpeg
         bzip2
         lame
         lcms2
-        openssl
         libssh
         libsrt
         libass
@@ -93,7 +92,7 @@ ExternalProject_Add(ffmpeg
         ${ffmpeg_uavs3d_cmd}
         --enable-libxvid
         --enable-libzimg
-        --enable-openssl
+        --enable-schannel
         --enable-libxml2
         --enable-libmysofa
         --enable-libssh
